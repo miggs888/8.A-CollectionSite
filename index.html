@@ -1,0 +1,42 @@
+<!doctype html>
+
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Chivo|Nosifer&display=swap" rel="stylesheet">
+    <script src="script.js"></script>
+    <title>7.A-Collection Array</title>
+  </head>
+
+  <body>
+      <h1>Hot Sauce Collection</h1>
+      <div id="app"> 
+        <table>
+          <thead>
+            <th>Name</th>
+            <th>Variation</th>
+            <th>Heat Rating</th>
+            <th>Bottle Size</th>
+            <th>Company Location</th>
+            <th>Manufacturer</th>
+          </thead>
+          <tbody>
+            <tr 
+              v-for="(sauces, index) in sauceList" 
+              v-bind:class="{even: (index + 1) % 2 === 0, odd: (index + 1) % 2 !==0
+            }">
+                <td>{{sauces.name}}</td>
+                <td>{{sauces.variation}}</td>
+                <td>{{sauces.heat}}</td>
+                <td>{{sauces.bottle}}</td>
+                <td>{{sauces.location}}</td>
+                <td>{{sauces.manufacturer}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      
+    <script src="vue.js"></script>
+  <script src="script.js"></script>
+  </body>
+</html>

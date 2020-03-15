@@ -1,0 +1,36 @@
+/* [v-cloak]{
+    display: none;
+} */
+.even {
+    background: rgb(245, 221, 0);
+}
+.odd {
+    background: rgb(243, 126, 80);
+}
+h1 {
+    font-family: 'Nosifer', cursive;
+    padding: 20px;
+    font-size: 300%;
+    color: red;
+    background: black;
+}
+html {
+    background: rgb(245, 221, 0);
+}
+table {
+    background: black;
+    border: solid 1px black;
+    padding: 20px;
+}
+th {
+    font-family: 'Chivo', sans-serif;
+    padding: 10px;
+    color: white;
+    font-size: 110%;
+}
+td {
+    font-family: 'Chivo', sans-serif;
+    padding: 3px;
+    font-size: 80%;
+    text-align: center;
+}
