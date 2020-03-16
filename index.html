@@ -9,7 +9,7 @@
   </head>
 
   <body>
-      <h1>Hot Sauce Collection</h1>
+      <h1>Necessary Hot Sauces Collection</h1>
       <div id="app"> 
         <table>
           <thead>
@@ -31,9 +31,48 @@
                 <td>{{sauces.bottle}}</td>
                 <td>{{sauces.location}}</td>
                 <td>{{sauces.manufacturer}}</td>
+                <td><button type="button" v-on:click="deleteItem(sauces)">Delete</button></td>
             </tr>
           </tbody>
         </table>
+        <form class="new-sauce-form" v-on:submit.prevent="submitHandler">
+          <fieldset>
+            <legend>
+              Add a Hot Sauce to the Collection!
+            </legend>
+            <div>
+              <label for="name">Name
+                <input id="name"type="text" v-model="newSauceObj.name">
+              </label>
+            </div>
+            <div>
+              <label for="variation">Variation</label>
+                <input id="variation"type="text" v-model="newSauceObj.variation">
+              </label>
+            </div>
+            <div>
+              <label for="heat">Heat</label>
+                <input id="heat"type="text" v-model="newSauceObj.heat">
+              </label>
+            </div>
+            <div>
+              <label for="bottle">Bottle Size</label>
+                <input id="bottle"type="text" v-model="newSauceObj.bottle">
+              </label>
+            </div>
+            <div>
+              <label for="location">Company Location</label>
+                <input id="location"type="text" v-model="newSauceObj.location">
+              </label>
+            </div>
+            <div>
+              <label for="manufacturer">Manufacturer</label>
+                <input id="manufacturer"type="text" v-model="newSauceObj.manufacturer">
+              </label>
+            </div>
+            <button type="submit">Submit</button>
+          </fieldset>
+        </form>
       </div>
       
     <script src="vue.js"></script>

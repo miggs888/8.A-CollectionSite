@@ -45,6 +45,37 @@ var mySaucesArray = [
 var vm = new Vue({
   el:"#app",
   data: {
-    sauceList: mySaucesArray
+    sauceList: mySaucesArray, 
+    newSauceObj: {
+      name: "",
+      variation: "",
+      heat: "",
+      bottle: "",
+      manufacturer: "",
+      location: ""
+
+    }
+  }, 
+  methods: {
+    submitHandler: () => {
+      console.log('submitted');
+      vm.sauceList = vm.sauceList.concat(vm.newSauceObj);
+      vm.resetForm();
+    },
+    resetForm: () => {
+      vm.newSauceObj = {
+        name: "",
+        variation: "",
+        heat: "",
+        bottle: "",
+        manufacturer: "",
+        location: ""
+      };
+    },
+    deleteItem: item => {
+      vm.sauceList = vm.sauceList.filter(sauces => {
+        return sauces !== item;
+      })
+    }
   }
 });
